@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHREE'S DENTAL (IMPLANT AND ORTHODONTIC CENTRE)</title>
+    <meta name="description" content="Shree’s Dental – Implant & Orthodontic Centre is dedicated to delivering advanced, patient-focused dental care. We specialize in dental implants, braces, and smile designing, combining modern technology with personalized treatment to create healthy, confident smiles. Precision care. Lasting smiles.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- TailWind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4B2A85', // Deep Purple
+                        accent: '#2D1650',  // Darker Purple
+                        'soft-bg': '#F8F7FF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Crimson Pro', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS Library for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="font-sans bg-white text-accent selection:bg-primary/20" x-data="{ mobileMenu: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+
+    <!-- Navigation -->
+    <nav 
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        :class="scrolled ? 'glass-nav py-4 shadow-sm' : 'bg-transparent py-6'"
+    >
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/d/1QpJdBy7gAJl2vJbHl0_VQ0OsGhOD-zpW" alt="Logo" class="w-10 h-10 object-contain" referrerPolicy="no-referrer">
+                <span class="text-xl font-serif font-bold tracking-tight text-primary">SHREE'S <span class="text-accent">DENTAL</span></span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="tel:8667497084" class="flex items-center gap-2 text-primary font-bold mr-4">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    8667497084
+                </a>
+                <a href="#home" class="text-sm font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#services" class="text-sm font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                <a href="#testimonials" class="text-sm font-medium hover:text-primary transition-colors">Testimonials</a>
+                <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all shadow-lg shadow-primary/20">Book Now</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-accent" @click="mobileMenu = !mobileMenu">
+                <i data-lucide="menu" x-show="!mobileMenu"></i>
+                <i data-lucide="x" x-show="mobileMenu" x-cloak></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div 
+            class="md:hidden bg-white border-t border-slate-100" 
+            x-show="mobileMenu" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-cloak
+        >
+            <div class="flex flex-col p-6 gap-4">
+                <a href="#home" @click="mobileMenu = false" class="text-lg font-medium">Home</a>
+                <a href="#services" @click="mobileMenu = false" class="text-lg font-medium">Services</a>
+                <a href="#about" @click="mobileMenu = false" class="text-lg font-medium">About</a>
+                <a href="#contact" @click="mobileMenu = false" class="bg-primary text-white px-6 py-3 rounded-xl text-center font-semibold">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4 -z-10"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="800">
+                    <div class="inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-full mb-6 shadow-sm">
+                        <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider text-accent/80">Top Rated Dental Clinic in Adambakkam</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-primary leading-[1.1] mb-6 underline decoration-accent/10">
+                        SHREE'S <span class="text-accent">DENTAL</span> <br>
+                        <span class="text-primary italic text-3xl md:text-5xl">(IMPLANT AND ORTHODONTIC CENTRE)</span>
+                    </h1>
+                    
+                    <p class="text-lg text-accent/80 mb-8 max-w-lg leading-relaxed">
+                        Experience world-class dental care with a personal touch. From routine checkups to advanced implants, we ensure your comfort and oral health are our top priorities.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 shadow-xl shadow-primary/20 hover:scale-105 transition-all">
+                            Book Appointment <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#services" class="bg-white text-accent border border-accent/20 px-8 py-4 rounded-full font-bold hover:bg-primary/5 transition-all">
+                            Our Services
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8 mt-12 border-t border-slate-100 pt-8">
+                        <div>
+                            <span class="text-2xl font-serif font-bold text-primary">9+</span>
+                            <p class="text-xs text-accent/60 uppercase font-bold tracking-widest">Years Exp</p>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-serif font-bold text-primary">10k+</span>
+                            <p class="text-xs text-accent/60 uppercase font-bold tracking-widest">Happy Patients</p>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-serif font-bold text-primary">5/5</span>
+                            <p class="text-xs text-accent/60 uppercase font-bold tracking-widest">Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Clinic" class="w-full h-auto object-cover" referrerPolicy="no-referrer">
+                    </div>
+                    
+                    <div class="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-slate-100 animate-bounce">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-accent">Safe & Sterile</p>
+                            <p class="text-[10px] text-accent/60 uppercase tracking-tighter">Certified Clinic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-accent font-bold uppercase tracking-[0.2em] text-xs">Our Expertise</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-accent mt-4">
+                        Comprehensive Dental <span class="text-primary italic">Solutions</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card -->
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 hover:bg-white hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-accent mb-4">General Checkups</h3>
+                        <p class="text-accent/60 text-sm">Comprehensive oral examinations and professional cleanings to maintain your perfect smile.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 hover:bg-white hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-accent mb-4">Dental Implants</h3>
+                        <p class="text-accent/60 text-sm">Restore your confidence with permanent, natural-looking tooth replacements.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 hover:bg-white hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-accent mb-4">Orthodontics</h3>
+                        <p class="text-accent/60 text-sm">Modern braces and invisible aligners to straighten your teeth comfortably.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 hover:bg-white hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="heart-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-accent mb-4">Root Canal Treatment</h3>
+                        <p class="text-accent/60 text-sm">Painless procedures to save your natural teeth and eliminate infection.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 hover:bg-white hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-accent mb-4">Teeth Whitening</h3>
+                        <p class="text-accent/60 text-sm">Professional whitening treatments for a brighter smile in one visit.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 hover:bg-white hover:shadow-2xl transition-all group" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="smile"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-accent mb-4">Cosmetic Dentistry</h3>
+                        <p class="text-accent/60 text-sm">Veneers and smile makeovers tailored to your unique facial features.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-soft-bg overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="relative" data-aos="fade-right">
+                        <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800" alt="Doctor" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="absolute -bottom-8 -right-8 bg-primary text-white p-8 rounded-3xl shadow-2xl hidden lg:block">
+                            <p class="text-4xl font-serif font-bold mb-1">10+</p>
+                            <p class="text-xs uppercase tracking-widest font-bold opacity-80">Awards Won</p>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <span class="text-accent font-bold uppercase tracking-[0.2em] text-xs">Why Choose Us</span>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-accent mt-4 mb-8">
+                            Excellence in <span class="text-primary italic">Modern</span> Dentistry
+                        </h2>
+                        <p class="text-accent/80 mb-8 leading-relaxed">
+                            At SHREE'S DENTAL (IMPLANT AND ORTHODONTIC CENTRE), we combine years of clinical expertise with the latest dental technology to provide a comfortable and effective treatment experience. Our Adambakkam centre is dedicated to helping you achieve the smile you've always dreamed of.
+                        </p>
+
+                        <div class="mt-12 space-y-4">
+                            <!-- Dr Srikanth -->
+                            <div class="p-6 bg-white rounded-2xl border border-accent/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                <div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-primary/10">
+                                    <img src="https://lh3.googleusercontent.com/d/1yRNqQTnSLNniGfjPeTsBG_SsgnCqTUiM" alt="Dr M.V. Srikanth" class="w-full h-full object-cover object-top" referrerPolicy="no-referrer">
+                                </div>
+                                <div>
+                                    <a href="https://www.instagram.com/srikanth_varadharajan94?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-primary transition-colors">
+                                        <p class="font-serif font-bold text-accent">Dr. M.V. Srikanth, MDS</p>
+                                    </a>
+                                    <p class="text-xs text-primary font-bold uppercase tracking-wider">Implantologist & Director</p>
+                                </div>
+                            </div>
+                            <!-- Dr Durga -->
+                            <div class="p-6 bg-white rounded-2xl border border-accent/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+                                <div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-primary/10">
+                                    <img src="https://lh3.googleusercontent.com/d/1Vk6xMJn14gCSX5yXsmv3roVurILC0R2i" alt="Dr. R. Durga" class="w-full h-full object-cover object-top" referrerPolicy="no-referrer">
+                                </div>
+                                <div>
+                                    <a href="https://www.instagram.com/durgatheorthodontist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-primary transition-colors">
+                                        <p class="font-serif font-bold text-accent">Dr. R. Durga, MDS</p>
+                                    </a>
+                                    <p class="text-xs text-primary font-bold uppercase tracking-wider">Orthodontist & Invisalign Provider</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-accent font-bold uppercase tracking-[0.2em] text-xs">Patient Stories</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-accent mt-4">Trusted by <span class="text-primary italic">Thousands</span></h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 relative shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex gap-1 mb-4 text-accent fill-accent">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-accent/80 mb-6 italic">"The best dental experience I've ever had. Dr. Shree was so patient and explained everything clearly."</p>
+                        <p class="font-bold text-accent">Priya Sharma</p>
+                        <p class="text-xs text-accent/60 uppercase tracking-widest">IT Professional</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 relative shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex gap-1 mb-4 text-accent fill-accent">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-accent/80 mb-6 italic">"Got my dental implants done here. The results are amazing and look so natural. Highly recommend."</p>
+                        <p class="font-bold text-accent">Rahul Krishnan</p>
+                        <p class="text-xs text-accent/60 uppercase tracking-widest">Business Owner</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-soft-bg border border-accent/5 relative shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex gap-1 mb-4 text-accent fill-accent">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-accent/80 mb-6 italic">"Very clean environment. The staff is very friendly and the appointment booking via WhatsApp is super convenient."</p>
+                        <p class="font-bold text-accent">Anitha V.</p>
+                        <p class="text-xs text-accent/60 uppercase tracking-widest">Teacher</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-primary text-white overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div data-aos="fade-up">
+                        <span class="text-accent font-bold uppercase tracking-[0.2em] text-xs">Get In Touch</span>
+                        <h2 class="text-4xl md:text-6xl font-serif font-bold mt-4 mb-8">
+                            Start Your Journey to a <span class="italic text-accent">Perfect</span> Smile
+                        </h2>
+                        
+                        <div class="space-y-8 mt-12">
+                            <a href="https://maps.app.goo.gl/95TsrwwfT9H8SgaN7" target="_blank" class="flex items-start gap-6 group">
+                                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-accent transition-all">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-accent group-hover:text-primary transition-all"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm uppercase tracking-widest font-bold text-white/60 mb-1">Location</p>
+                                    <p class="text-lg group-hover:text-accent transition-colors">41, Lakeview St, Parthasarathy Nagar, Adambakkam, Chennai, Tamil Nadu 600088</p>
+                                    <span class="text-xs text-accent font-bold uppercase tracking-widest transition-all">Get Directions →</span>
+                                </div>
+                            </a>
+
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="phone" class="w-6 h-6 text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm uppercase tracking-widest font-bold text-white/60 mb-1">Call Us</p>
+                                    <p class="text-lg font-bold">8667497084</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm uppercase tracking-widest font-bold text-white/60 mb-1">Email Us</p>
+                                    <p class="text-lg">shreesdental@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="clock" class="w-6 h-6 text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm uppercase tracking-widest font-bold text-white/60 mb-1">Working Hours</p>
+                                    <p class="text-lg">Mon - Sat: 9:30 AM - 1:30 PM & 5:00 PM - 9:00 PM</p>
+                                    <p class="text-sm text-white/60">Sunday: By Appointment Only</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <a href="https://www.instagram.com/shrees_dental?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white px-6 py-3 rounded-2xl font-bold shadow-lg hover:scale-105 transition-transform">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                                Follow on Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-8 md:p-12 text-accent shadow-2xl" data-aos="zoom-in">
+                        <h3 class="text-2xl font-serif font-bold mb-6 text-center">Book Your Appointment</h3>
+                        <p class="text-accent/60 text-center mb-8">Quickest way to book is via WhatsApp. Our team will confirm your slot instantly.</p>
+                        
+                        <div class="space-y-4">
+                            <a href="https://wa.me/918667497084?text=Hello!%20I'd%20like%20to%20book%20an%20appointment%20at%20SHREE'S%20DENTAL%20(Adambakkam)." target="_blank" class="w-full bg-[#25D366] text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:scale-105 transition-transform shadow-lg shadow-green-500/20">
+                                <i data-lucide="message-square"></i>
+                                Book via WhatsApp
+                            </a>
+                            
+                            <div class="relative py-4">
+                                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-accent/10"></div></div>
+                                <div class="relative flex justify-center text-xs uppercase tracking-widest text-accent/40"><span class="bg-white px-2">Or Call Us Directly</span></div>
+                            </div>
+
+                            <a href="tel:8667497084" class="w-full bg-primary text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+                                <i data-lucide="phone"></i>
+                                8667497084
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-soft-bg border-t border-accent/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/d/1QpJdBy7gAJl2vJbHl0_VQ0OsGhOD-zpW" alt="Logo" class="w-10 h-10 object-contain" referrerPolicy="no-referrer">
+                <span class="text-lg font-serif font-bold tracking-tight text-primary">SHREE'S <span class="text-accent">DENTAL</span></span>
+            </div>
+            
+            <div class="text-center md:text-left">
+                <p class="text-xs font-bold uppercase tracking-widest text-accent/80 mb-2">Location</p>
+                <a href="https://maps.app.goo.gl/95TsrwwfT9H8SgaN7" target="_blank" class="text-sm text-accent/60 max-w-[250px] hover:text-primary transition-colors block italic">
+                    41, Lakeview St, Parthasarathy Nagar, Adambakkam, Chennai - 600088
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end gap-2">
+                <p class="text-sm text-accent/60">© 2026 SHREE'S DENTAL. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs font-bold uppercase tracking-widest text-accent/40 hover:text-primary transition-colors">Privacy</a>
+                    <a href="#" class="text-xs font-bold uppercase tracking-widest text-accent/40 hover:text-primary transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918667497084?text=Hello!%20I'd%20like%20to%20book%20an%20appointment%20at%20SHREE'S%20DENTAL%20(Adambakkam)." target="_blank" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+        <i data-lucide="message-square"></i>
+        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-bounce">Book</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
